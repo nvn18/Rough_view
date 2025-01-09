@@ -97,20 +97,20 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const text = "COMING SOON...";
+            const text = "COMING SOON ...";
             const h1 = document.querySelector("h1");
             h1.innerHTML = "";
 
             text.split("").forEach((letter, index) => {
                 const span = document.createElement("span");
-                span.textContent = letter;
+                span.textContent = letter === " " ? "\u00A0" : letter; // Add non-breaking space for spaces
                 span.classList.add("falling-text");
                 span.style.animationDelay = `${index * 0.3}s`;
                 h1.appendChild(span);
             });
         });
     </script>
-</head> 
+</head>
 <body>
     <header>
         <img src="logo.png" alt="NAATS Logo">
